@@ -32,7 +32,9 @@ This folder contains the frontend code for MediTech, an AI-powered Electronic Me
 
 ### Configuration
 
-No specific configuration is required for the frontend itself. However, ensure that the backend server is running and accessible at the URL specified in your frontend code (usually `http://0.0.0.0:8000/`).
+* **Backend URL:**
+    1. Run the backend
+    2. Copy the backend url (eg:`https://yourdomain.com/asr`) to `record.js` in the js folder (`/frontent/app/static/app/js`).
 
 ### Running the Frontend
 
