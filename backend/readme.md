@@ -39,7 +39,7 @@ This folder contains the backend code for MediTech, an AI-powered Electronic Med
 
 * **Anthropic API Key:**
     1. Obtain an API key from [https://www.anthropic.com/](https://www.anthropic.com/).
-    2. Set the variable `ANTHROPIC_API_KEY` as the api key.
+    2. Create a `.env` file and set add a variable `ANTHROPIC_API_KEY` as the api key.
 
 ### Running the Backend
 
