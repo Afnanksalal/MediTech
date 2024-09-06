@@ -38,7 +38,13 @@ This folder contains the frontend code for MediTech, an AI-powered Electronic Me
 
 ### Running the Frontend
 
-1. **Start the Django development server:**
+1. **Database setup:**
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
+2. **Start the Django development server:**
    ```bash
    python manage.py runserver
    ```
