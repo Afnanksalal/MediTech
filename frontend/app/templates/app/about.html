@@ -1,0 +1,113 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About Us - MediTech Hospital</title>
+        <link rel="stylesheet" href="{% static 'app/css/styles.css' %}" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1>MediTech Hospital</h1>
+            <nav class="navbar navbar-expand-lg">
+                <div id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}"
+                                >About Us</a
+                            >
+                        </li>
+                        {% if not is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'record' %}">Record Audio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container mt-5">
+            <h2>About MediTech Hospital</h2>
+            <p>
+                MediTech Hospital is a leading healthcare provider committed to
+                delivering compassionate care and advanced medical treatments.
+                Our mission is to provide high-quality, patient-centered care,
+                and our vision is to be a recognized leader in healthcare
+                excellence. Our dedicated team of healthcare professionals is
+                here to support you with the best possible care.
+            </p>
+            <h3>Our History</h3>
+            <p>
+                Established in 2000, MediTech Hospital has grown from a small
+                clinic into a comprehensive healthcare facility offering a wide
+                range of services. Over the years, we have expanded our
+                capabilities and facilities to meet the evolving needs of our
+                community.
+            </p>
+            <h3>Our Team</h3>
+            <p>
+                Our team of medical professionals includes experienced doctors,
+                nurses, and support staff dedicated to providing exceptional
+                care. We work collaboratively to ensure that every patient
+                receives personalized attention and treatment.
+            </p>
+            <h3>Contact Us</h3>
+            <p>
+                For more information about our services or to schedule an
+                appointment, please contact us at +91 12345 67890 or email us at
+                info@meditech.in
+            </p>
+        </div>
+
+        <footer class="footer">
+            <h3>Connect With Us</h3>
+            <ul>
+                <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+            <p>© 2024 MediTech Hospital. All Rights Reserved.</p>
+        </footer>
+
+        <script src="{% static 'app/js/carousel.js' %}"></script>
+    </body>
+</html>

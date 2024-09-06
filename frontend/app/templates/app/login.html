@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> Login - MediTech Hospital</title>
+        <link rel="stylesheet" href="{% static 'app/css/styles.css' %}" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <header class="header">
+            <h1>MediTech Hospital</h1>
+            <nav class="navbar navbar-expand-lg">
+                <div id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}"
+                                >About Us</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signup' %}"
+                                >Sign Up</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container mt-5">
+            <h2> Login</h2>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %} {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+
+        <footer class="footer">
+            <h3>Connect With Us</h3>
+            <ul>
+                <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+            <p>© 2024 MediTech Hospital. All Rights Reserved.</p>
+        </footer>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+            integrity="sha512-pumBsjWt0/e0yylxZj4Dph/h0n8ZCPwu0+sSPOxLK5K6CBkt90b5w86TGLAmIp4RQ+b96bNqY+yUBtY3Y/w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

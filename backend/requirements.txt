@@ -1,0 +1,10 @@
+sanic
+torch
+transformers
+sentencepiece
+langdetect
+anthropic
+requests
+sacremoses
+accelerate
+librosa

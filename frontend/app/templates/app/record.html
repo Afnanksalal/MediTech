@@ -1,0 +1,163 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Record Audio - MediTech Hospital</title>
+        <link rel="stylesheet" href="{% static 'app/css/styles.css' %}" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="{% static 'app/js/record.js' %}"></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1>MediTech Hospital</h1>
+            <nav class="navbar navbar-expand-lg">
+                <div id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}"
+                                >About Us</a
+                            >
+                        </li>
+                        {% if is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'record' %}"
+                                >Record Audio</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}"
+                                >Logout</a
+                            >
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signup' %}"
+                                >Sign Up</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}"
+                                >Login</a
+                            >
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container mt-5">
+            <h2>Patient Details</h2>
+            <form id="patientForm">
+                <input
+                    type="text"
+                    id="patientNameInput"
+                    placeholder="Patient Name"
+                    class="form-control mb-2"
+                    required
+                />
+                <input
+                    type="number"
+                    id="patientAgeInput"
+                    placeholder="Age"
+                    class="form-control mb-2"
+                    required
+                />
+                <input
+                    type="text"
+                    id="patientAddressInput"
+                    placeholder="Address"
+                    class="form-control mb-2"
+                    required
+                />
+                <select id="patientSexInput" class="form-control mb-2" required>
+                    <option value="">Select Sex</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input
+                    type="tel"
+                    id="patientPhoneInput"
+                    placeholder="Phone Number"
+                    class="form-control mb-2"
+                    required
+                />
+            </form>
+
+            <h2>Record Audio</h2>
+            <p>
+                Click the button below to start recording your audio. After
+                recording, the audio will be sent to the Sanic server for
+                processing. You can also upload an audio file.
+            </p>
+            <button id="startRecord" class="btn btn-primary">
+                Start Recording
+            </button>
+            <button id="stopRecord" class="btn btn-danger" disabled>
+                Stop Recording
+            </button>
+            <input
+                type="file"
+                id="audioUploadInput"
+                accept="audio/wav"
+                style="display: none"
+            />
+            <button id="uploadButton" class="btn btn-secondary">
+                Upload Audio
+            </button>
+            <p id="status"></p>
+            <div id="results" class="mt-4" style="display: none">
+                <h3>Transcription</h3>
+                <p id="transcription"></p>
+                <h3>Translation</h3>
+                <p id="translation"></p>
+                <h3>EMR Data</h3>
+                <pre id="emr-data"></pre>
+                <h3>Suggestions</h3>
+                <pre id="suggestions"></pre>
+                <button id="downloadReport" class="btn btn-success">
+                    Download Report
+                </button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <h3>Connect With Us</h3>
+            <ul>
+                <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+            <p>© 2024 MediTech Hospital. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>

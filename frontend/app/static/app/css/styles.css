@@ -1,0 +1,412 @@
+/* General Styles */
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: #fff;
+    color: #155724;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3rem; /* Increased size for the header text */
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 800; /* Made text bold */
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #155724;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 10px 0;
+    max-width: 1200px;
+}
+
+.navbar-nav {
+    flex-direction: row; /* Align nav items horizontally */
+    justify-content: center; /* Center align the items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px; /* Adjusted margin for spacing */
+}
+
+.navbar-nav .nav-link {
+    color: #d4edda !important;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.navbar-nav .nav-link:hover {
+    border-bottom: 2px solid #d4edda;
+}
+
+/* Jumbotron Styles */
+.jumbotron {
+    background-color: #e9ecef;
+    color: #333;
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.jumbotron h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+.jumbotron p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+.jumbotron .btn-primary {
+    background-color: #c3e6cb;
+    border-color: #155724;
+   color: #c3e6cb !important;
+}
+
+.jumbotron .btn-primary:hover {
+    background-color: #155724;
+    border-color: #0f992f;
+    color: #c3e6cb;
+}
+
+.container {
+    flex: 1; /* Push the footer to the bottom */
+}
+
+/* Container Styles */
+.container h2 {
+    font-size: 2rem;
+    color: #155724;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+.container p {
+    font-size: 1.1rem;
+    color: #555;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+/* About Section Styles */
+.about-section,
+.services {
+    margin-top: 2rem;
+}
+
+.about-section {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: #155724;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+/* Services Section Styles */
+.services .card {
+    background-color: #fff;
+    border: 1px solid #d4edda;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.services .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.services .card-body {
+    padding: 1.5rem;
+}
+
+.services .card-title {
+    color: #155724;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+.services .card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services .card ul li {
+    color: #155724;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+.services .card ul li::before {
+    content: "✔";
+    color: #155724;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #155724;
+    color: #d4edda;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer a {
+    color: #d4edda;
+    font-size: 1.2rem;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer i {
+    font-size: 1.5rem;
+}
+
+.footer i:hover {
+    color: #fff;
+}
+
+/* Image Carousel Styles */
+.image-carousel {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.image-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 1rem;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-carousel img.active {
+    opacity: 1;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.carousel-controls button {
+    background: none;
+    border: none;
+    color: #c3e6cb;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.carousel-controls button:hover {
+    color: #155724;
+}
+
+#loading-spinner {
+    display: none; /* Initially hidden */
+    position: absolute; /* Position relative to parent */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center using translate */
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+/* You can customize the spinner style if needed */
+#loading-spinner .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: row; /* Keep items in a row */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px; /* Reduce margin on mobile */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem; /* Reduce font size on mobile */
+        padding: 8px 12px; /* Adjust padding on mobile */
+    }
+
+    .image-carousel {
+        height: 300px; /* Adjusted height for mobile */
+    }
+
+    .jumbotron h1 {
+        font-size: 2rem; /* Adjusted font size for mobile */
+    }
+
+    .jumbotron p {
+        font-size: 1rem; /* Adjusted font size for mobile */
+    }
+
+    .container h2 {
+        font-size: 1.5rem; /* Adjusted font size for mobile */
+    }
+
+    .container p {
+        font-size: 1rem; /* Adjusted font size for mobile */
+    }
+}
+
+/* Form Styles */
+form {
+    font-family: "Oswald", sans-serif; /* Applied Oswald font to form elements */
+    margin-top: 2rem;
+}
+
+label {
+    font-weight: 600;
+    color: #155724;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea {
+    border: 1px solid #ced4da;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font to input fields */
+}
+
+.btn-primary {
+    background-color: #155724!important;
+    border-color: #155724 !important;
+    color: #155724;
+    font-weight: 600;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font to buttons */
+}
+
+.btn-primary:hover {
+    background-color: #155724;
+    border-color:#0f992f;
+    color: #c3e6cb;
+}
+.login-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 30px;
+    color: #155724;
+    text-align: center;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font */
+}
+
+/* Form Styles (within login-container) */
+.login-container label {
+    font-weight: 600;
+    color: #155724;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font to labels */
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container input[type="email"],
+.login-container input[type="number"],
+.login-container textarea {
+    border: 1px solid #ced4da;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font to input fields */
+}
+
+.login-container .btn-primary {
+    background-color: #c3e6cb;
+    border-color: #fff;
+    color: #fff;
+    font-weight: 600;
+    font-family: "Oswald", sans-serif; /* Applied Oswald font to buttons */
+    border-radius: 15px; /* Added border-radius for login button */
+    width: 100%; /* Make login button full width */
+}
+
+.login-container .btn-primary:hover {
+    background-color: #155724;
+    border-color: #0f992f;
+    color: #c3e6cb;
+}

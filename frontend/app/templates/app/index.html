@@ -1,0 +1,153 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MediTech Hospital</title>
+        <link rel="stylesheet" href="{% static 'app/css/styles.css' %}" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <h1>MediTech Hospital</h1>
+            <nav class="navbar navbar-expand-lg">
+                <div id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}"
+                                >About Us</a
+                            >
+                        </li>
+                        {% if not is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'record' %}">Record Audio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="jumbotron">
+            <div class="image-carousel">
+                <img
+                    src="{% static 'app/images/a.jpg' %}"
+                    alt="Image 1"
+                    class="active"
+                />
+                <img src="{% static 'app/images/b.jpg' %}" alt="Image 2" />
+                <img src="{% static 'app/images/c.jpg' %}" alt="Image 3" />
+                <div class="carousel-controls">
+                    <button class="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <h1 class="display-4">Welcome to MediTech Hospital</h1>
+            <p class="lead">
+                Providing exceptional healthcare services for the community.
+            </p>
+            <a href="#" class="btn btn-primary btn-lg">Learn More</a>
+        </div>
+
+        <div class="container">
+            <h2>About MediTech Hospital</h2>
+            <p>
+                MediTech Hospital is a leading healthcare provider committed to
+                delivering compassionate care and advanced medical treatments.
+            </p>
+            <div class="row mt-4 services">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Our Services</h3>
+                            <ul>
+                                <li class="list">Emergency Care</li>
+                                <li class="list">ENT</li>
+                                <li class="list">And more...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Our Mission</h3>
+                            <p>
+                                We aim to provide comprehensive healthcare
+                                services to improve the well-being of our
+                                community with compassion and excellence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Our Vision</h3>
+                            <p>
+                                To be a leading healthcare provider with
+                                exceptional quality care, and a patient-centered
+                                approach that prioritizes both advanced
+                                treatments and service.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <h3>Connect With Us</h3>
+            <ul>
+                <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+            <p>© 2024 MediTech Hospital. All Rights Reserved.</p>
+        </footer>
+
+        <script src="{% static 'app/js/carousel.js' %}"></script>
+    </body>
+</html>
